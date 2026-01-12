@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Digital Comic</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="app" class="rtl-container">
+        <!-- Progress Bar -->
+        <div id="progress-bar" class="progress-bar">
+            <div id="progress-fill" class="progress-fill"></div>
+            <span id="progress-text" class="progress-text">0 / 0</span>
+        </div>
+
+        <!-- Main Scene Container -->
+        <div id="scene-container" class="scene-container">
+            <!-- Main Scene Image -->
+            <div id="main-scene" class="main-scene">
+                <img id="scene-image" src="" alt="Scene" class="scene-image">
+            </div>
+
+            <!-- Parallel Path (Small and Dark) - Only shown after second decision -->
+            <div id="parallel-scene" class="parallel-scene hidden">
+                <img id="parallel-image" src="" alt="Alternative Path" class="parallel-image">
+                <div class="parallel-label">The path not taken</div>
+            </div>
+        </div>
+
+        <!-- Scene Description -->
+        <div id="scene-description" class="scene-description"></div>
+
+        <!-- Decision Choices -->
+        <div id="choices-container" class="choices-container hidden">
+            <h2 class="choices-title">Choose your path...</h2>
+            <div id="choices-buttons" class="choices-buttons"></div>
+        </div>
+
+        <!-- Navigation Controls -->
+        <div id="navigation" class="navigation">
+            <button id="prev-btn" class="nav-btn" disabled>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+                Previous
+            </button>
+
+            <button id="next-btn" class="nav-btn" disabled>
+                Next
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Ending Screen -->
+        <div id="ending-screen" class="ending-screen hidden">
+            <div class="ending-content">
+                <h1 id="ending-title" class="ending-title"></h1>
+                <p id="ending-description" class="ending-description"></p>
+                <div id="ending-emotions" class="ending-emotions"></div>
+                <p class="ending-note">This is where your journey ends...</p>
+            </div>
+        </div>
+
+        <!-- Loading Screen -->
+        <div id="loading" class="loading">
+            <div class="spinner"></div>
+            <p>Loading your story...</p>
+        </div>
+
+        <!-- Error Screen -->
+        <div id="error-screen" class="error-screen hidden">
+            <h2>Something went wrong</h2>
+            <p id="error-message"></p>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

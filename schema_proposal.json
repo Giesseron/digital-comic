@@ -1,0 +1,61 @@
+{
+  "$schema": "Interactive Comic Story Schema v1.0",
+  "metadata": {
+    "title": "Interactive Digital Comic",
+    "readingDirection": "rtl",
+    "totalScenes": 23,
+    "description": "Branching narrative with emotional decision points"
+  },
+  "start": "scene_1",
+  "scenes": {
+    "scene_1": {
+      "id": "scene_1",
+      "image": "1.jpg",
+      "description": "Opening scene",
+      "type": "linear",
+      "next": "scene_2"
+    },
+    "scene_7": {
+      "id": "scene_7",
+      "image": "7.jpg",
+      "description": "First decision point",
+      "type": "decision",
+      "choices": [
+        {
+          "label": "Struggle / Resistance",
+          "emotionalTone": "struggle",
+          "next": "scene_struggle_loop_start"
+        },
+        {
+          "label": "Acceptance",
+          "emotionalTone": "acceptance",
+          "next": "scene_acceptance_path_1"
+        }
+      ]
+    },
+    "scene_decision_2": {
+      "id": "scene_decision_2",
+      "image": "XX.jpg",
+      "description": "Second decision point",
+      "type": "decision",
+      "choices": [
+        {
+          "label": "Struggle / Resistance",
+          "emotionalTone": "struggle",
+          "next": "scene_ending_struggle"
+        },
+        {
+          "label": "Acceptance",
+          "emotionalTone": "acceptance",
+          "next": "scene_ending_acceptance"
+        }
+      ]
+    },
+    "scene_ending_acceptance": {
+      "id": "scene_ending_acceptance",
+      "image": "XX.jpg",
+      "description": "Acceptance ending",
+      "type": "ending"
+    }
+  }
+}

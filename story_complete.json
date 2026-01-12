@@ -1,0 +1,257 @@
+{
+  "$schema": "Interactive Comic Story Schema v1.0",
+  "metadata": {
+    "title": "Interactive Digital Comic",
+    "readingDirection": "rtl",
+    "totalScenes": 23,
+    "description": "Branching narrative with emotional decision points and parallel path visualization",
+    "features": {
+      "parallelVisualization": true,
+      "absoluteEndings": true,
+      "emotionalContrast": true
+    }
+  },
+  "start": "scene_1",
+  "scenes": {
+    "scene_1": {
+      "id": "scene_1",
+      "image": "1.png",
+      "description": "Opening scene",
+      "type": "linear",
+      "next": "scene_2"
+    },
+    "scene_2": {
+      "id": "scene_2",
+      "image": "2.png",
+      "description": "Story continuation",
+      "type": "linear",
+      "next": "scene_3"
+    },
+    "scene_3": {
+      "id": "scene_3",
+      "image": "3.png",
+      "description": "Story continuation",
+      "type": "linear",
+      "next": "scene_4"
+    },
+    "scene_4": {
+      "id": "scene_4",
+      "image": "4.png",
+      "description": "Story continuation",
+      "type": "linear",
+      "next": "scene_5"
+    },
+    "scene_5": {
+      "id": "scene_5",
+      "image": "5.png",
+      "description": "Story continuation",
+      "type": "linear",
+      "next": "scene_6"
+    },
+    "scene_6": {
+      "id": "scene_6",
+      "image": "6.png",
+      "description": "Story continuation",
+      "type": "linear",
+      "next": "scene_7"
+    },
+    "scene_7": {
+      "id": "scene_7",
+      "image": "7.png",
+      "description": "First decision point",
+      "type": "decision",
+      "decisionNumber": 1,
+      "choices": [
+        {
+          "label": "Struggle / Resistance",
+          "emotionalTone": "struggle",
+          "description": "Choose the path of resistance and struggle",
+          "next": "scene_8_struggle"
+        },
+        {
+          "label": "Acceptance",
+          "emotionalTone": "acceptance",
+          "description": "Choose the path of acceptance",
+          "next": "scene_12"
+        }
+      ]
+    },
+    "scene_8_struggle": {
+      "id": "scene_8_struggle",
+      "image": "8.png",
+      "description": "Struggle path - scene 8",
+      "type": "linear",
+      "emotionalTone": "struggle",
+      "next": "scene_9_struggle"
+    },
+    "scene_9_struggle": {
+      "id": "scene_9_struggle",
+      "image": "9.png",
+      "description": "Struggle path - scene 9",
+      "type": "linear",
+      "emotionalTone": "struggle",
+      "next": "scene_10_struggle"
+    },
+    "scene_10_struggle": {
+      "id": "scene_10_struggle",
+      "image": "10.png",
+      "description": "Struggle path - scene 10",
+      "type": "linear",
+      "emotionalTone": "struggle",
+      "next": "scene_11_struggle"
+    },
+    "scene_11_struggle": {
+      "id": "scene_11_struggle",
+      "image": "11.png",
+      "description": "Struggle loop decision point",
+      "type": "decision",
+      "emotionalTone": "struggle",
+      "choices": [
+        {
+          "label": "Stay in struggle",
+          "emotionalTone": "struggle",
+          "description": "Return to the struggle loop",
+          "next": "scene_8_struggle"
+        },
+        {
+          "label": "Exit struggle",
+          "emotionalTone": "neutral",
+          "description": "Move forward from the struggle",
+          "next": "scene_12"
+        }
+      ]
+    },
+    "scene_12": {
+      "id": "scene_12",
+      "image": "12.png",
+      "description": "Convergence point - both paths meet here",
+      "type": "linear",
+      "next": "scene_13"
+    },
+    "scene_13": {
+      "id": "scene_13",
+      "image": "13.png",
+      "description": "Second decision point - paths converge here",
+      "type": "decision",
+      "decisionNumber": 2,
+      "parallelVisualization": true,
+      "note": "After this decision, both paths are shown: chosen path in full size, non-chosen in small and dark",
+      "choices": [
+        {
+          "label": "Struggle / Resistance",
+          "emotionalTone": "struggle",
+          "description": "Continue with struggle and resistance",
+          "next": "scene_14_struggle",
+          "parallelPath": "scene_14_acceptance"
+        },
+        {
+          "label": "Acceptance",
+          "emotionalTone": "acceptance",
+          "description": "Continue with acceptance",
+          "next": "scene_19_acceptance",
+          "parallelPath": "scene_14_struggle"
+        }
+      ]
+    },
+    "scene_14_struggle": {
+      "id": "scene_14_struggle",
+      "image": "14.png",
+      "description": "Struggle path - scene 14",
+      "type": "parallel",
+      "emotionalTone": "struggle",
+      "parallelPath": "scene_19_acceptance",
+      "next": "scene_15_struggle"
+    },
+    "scene_15_struggle": {
+      "id": "scene_15_struggle",
+      "image": "15.png",
+      "description": "Struggle path - scene 15",
+      "type": "parallel",
+      "emotionalTone": "struggle",
+      "parallelPath": "scene_20_acceptance",
+      "next": "scene_16_struggle"
+    },
+    "scene_16_struggle": {
+      "id": "scene_16_struggle",
+      "image": "16.png",
+      "description": "Struggle path - scene 16",
+      "type": "parallel",
+      "emotionalTone": "struggle",
+      "parallelPath": "scene_21_acceptance",
+      "next": "scene_17_struggle"
+    },
+    "scene_17_struggle": {
+      "id": "scene_17_struggle",
+      "image": "17.png",
+      "description": "Struggle path - scene 17",
+      "type": "parallel",
+      "emotionalTone": "struggle",
+      "parallelPath": "scene_22_acceptance",
+      "next": "scene_18"
+    },
+    "scene_18": {
+      "id": "scene_18",
+      "image": "18.png",
+      "description": "Struggle ending - same place as acceptance ending, but with sadness, disconnection, lack of enjoyment",
+      "type": "ending",
+      "emotionalTone": "struggle",
+      "endingType": "absolute",
+      "emotionalState": {
+        "mood": "sadness",
+        "connection": "disconnected",
+        "experience": "no enjoyment"
+      },
+      "note": "Absolute ending - no return, no restart, same external location as scene 23 but different emotional interpretation"
+    },
+    "scene_19_acceptance": {
+      "id": "scene_19_acceptance",
+      "image": "19.png",
+      "description": "Acceptance path - scene 19",
+      "type": "parallel",
+      "emotionalTone": "acceptance",
+      "parallelPath": "scene_14_struggle",
+      "next": "scene_20_acceptance"
+    },
+    "scene_20_acceptance": {
+      "id": "scene_20_acceptance",
+      "image": "20.png",
+      "description": "Acceptance path - scene 20",
+      "type": "parallel",
+      "emotionalTone": "acceptance",
+      "parallelPath": "scene_15_struggle",
+      "next": "scene_21_acceptance"
+    },
+    "scene_21_acceptance": {
+      "id": "scene_21_acceptance",
+      "image": "21.png",
+      "description": "Acceptance path - scene 21",
+      "type": "parallel",
+      "emotionalTone": "acceptance",
+      "parallelPath": "scene_16_struggle",
+      "next": "scene_22_acceptance"
+    },
+    "scene_22_acceptance": {
+      "id": "scene_22_acceptance",
+      "image": "22.png",
+      "description": "Acceptance path - scene 22",
+      "type": "parallel",
+      "emotionalTone": "acceptance",
+      "parallelPath": "scene_17_struggle",
+      "next": "scene_23"
+    },
+    "scene_23": {
+      "id": "scene_23",
+      "image": "23.png",
+      "description": "Acceptance ending - same place as struggle ending, but with presence, connection to moment, enjoyment",
+      "type": "ending",
+      "emotionalTone": "acceptance",
+      "endingType": "absolute",
+      "emotionalState": {
+        "mood": "presence",
+        "connection": "connected to the moment",
+        "experience": "enjoyment"
+      },
+      "note": "Absolute ending - no return, no restart, same external location as scene 18 but different emotional interpretation"
+    }
+  }
+}
